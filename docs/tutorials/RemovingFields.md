@@ -54,9 +54,7 @@ After you are done, verify that the application still works by compiling and run
 
 Unfortunately, there are usages of `Address` that IntelliJ IDEA cannot identify. You can find them by searching for instances of the word `address` in your code (`Edit` \> `Find` \> `Find in path`).
 
-Places of interest to look out for would be resources used by the application. `main/resources` contains images and `fxml` files used by the application and `test/resources` contains test data. For example, there is a `$address` in each `PersonCard` that has not been removed nor identified.
-
-![$address](../images/remove/$address.png)
+Places of interest to look out for would be resources used by the application. `main/resources` contains images and `fxml` files used by the application and `test/resources` contains test data. 
 
 A quick look at the `PersonCard` class and its `fxml` file quickly reveals why it slipped past the automated refactoring.
 
@@ -74,7 +72,6 @@ private Label address;
 ``` xml
 ...
 <Label fx:id="phone" styleClass="cell_small_label" text="\$phone" />
-<Label fx:id="address" styleClass="cell_small_label" text="\$address" />
 <Label fx:id="email" styleClass="cell_small_label" text="\$email" />
 ...
 ```
