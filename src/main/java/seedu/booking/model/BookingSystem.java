@@ -95,13 +95,6 @@ public class BookingSystem implements ReadOnlyBookingSystem {
         persons.add(p);
     }
 
-    /**
-     * Adds a booking to the address book.
-     * The booking must not already exist in the address book.
-     */
-    public void addBooking(Booking b) {
-        bookings.add(b);
-    }
 
     /**
      * Replaces the given person {@code target} in the list with {@code editedPerson}.
@@ -183,6 +176,25 @@ public class BookingSystem implements ReadOnlyBookingSystem {
     public boolean hasBooking(Booking booking) {
         requireNonNull(booking);
         return bookings.contains(booking) || bookings.containsId(booking.getId());
+    }
+
+    /**
+     * Adds a booking to the address book.
+     * The booking must not already exist in the address book.
+     */
+    public void addBooking(Booking b) {
+        bookings.add(b);
+    }
+
+
+    /**
+     * Replaces the given venue {@code target} in the list with {@code editedVenue}.
+     * {@code target} must exist in the booking system.
+     * The venue identity of {@code editedVenue} must not be the same as another existing venue in the booking system.
+     */
+    public void setBooking(Booking target, Booking editedBooking) {
+        requireNonNull(editedBooking);
+        bookings.setBooking(target, editedBooking);
     }
 
     /**

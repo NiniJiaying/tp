@@ -148,7 +148,7 @@ public class EditBookingCommand extends Command {
             setId(toCopy.id);
         }
 
-        private void setId(Id id) {
+        public void setId(Id id) {
             this.id = id;
         }
 
@@ -156,7 +156,7 @@ public class EditBookingCommand extends Command {
             return Optional.ofNullable(id);
         }
 
-        private void setBookingEnd(EndTime bookingEnd) {
+        public void setBookingEnd(EndTime bookingEnd) {
             this.bookingEnd = bookingEnd;
         }
 
@@ -164,7 +164,7 @@ public class EditBookingCommand extends Command {
             return Optional.ofNullable(bookingEnd);
         }
 
-        private void setBookingStart(StartTime bookingStart) {
+        public void setBookingStart(StartTime bookingStart) {
             this.bookingStart = bookingStart;
         }
 
@@ -172,7 +172,7 @@ public class EditBookingCommand extends Command {
             return Optional.ofNullable(bookingStart);
         }
 
-        private void setDescription(Description description) {
+        public void setDescription(Description description) {
             this.description = description;
         }
 
@@ -180,7 +180,7 @@ public class EditBookingCommand extends Command {
             return Optional.ofNullable(description);
         }
 
-        private void setVenue(Venue venue) {
+        public void setVenue(Venue venue) {
             this.venue = venue;
         }
 

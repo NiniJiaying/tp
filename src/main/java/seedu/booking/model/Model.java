@@ -177,7 +177,8 @@ public interface Model {
     /**
      * Replaces the given booking {@code target} with {@code editedBooking}.
      * {@code target} must exist in the booking system.
-     * The booking identity of {@code editedBooking} must not be the same as another existing booking in the booking system.
+     * The booking identity of {@code editedBooking} must not be the same
+     * as another existing booking in the booking system.
      */
     void setBooking(Booking target, Booking editedBooking);
 

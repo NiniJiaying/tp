@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.booking.testutil.Assert.assertThrows;
 
+import java.awt.print.Book;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -154,6 +155,11 @@ public class CreateVenueCommandTest {
 
         @Override
         public void setPerson(Person target, Person editedPerson) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void setBooking(Booking target, Booking editedBooking) {
             throw new AssertionError("This method should not be called.");
         }
 
