@@ -111,6 +111,18 @@ public class Booking {
     }
 
     /**
+     * Returns true if both bookings have the same id.
+     * This defines a weaker notion of equality between two bookings.
+     */
+    public boolean isSameBooking(Booking otherBooking) {
+        if (otherBooking == this) {
+            return true;
+        }
+
+        return otherBooking != null
+                && otherBooking.getId().equals(getId());
+    }
+    /**
      * Returns true if both bookings have the same data fields.
      * This notion of equality between two bookings.
      */
