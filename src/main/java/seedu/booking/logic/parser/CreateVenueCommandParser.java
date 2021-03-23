@@ -38,6 +38,7 @@ public class CreateVenueCommandParser implements Parser<CreateVenueCommand> {
         if (argMultimap.getValue(PREFIX_DESCRIPTION).isPresent()) {
             description = ParserUtil.parseDescription(argMultimap.getValue(PREFIX_DESCRIPTION).get());
         }
+        argMultimap.put(PREFIX_DESCRIPTION, DEFAULT_DESCRIPTION);
 
         if (!arePrefixesPresent(argMultimap, PREFIX_VENUE, PREFIX_CAPACITY, PREFIX_DESCRIPTION)
                 || !argMultimap.getPreamble().isEmpty()) {
@@ -46,7 +47,6 @@ public class CreateVenueCommandParser implements Parser<CreateVenueCommand> {
 
         VenueName name = ParserUtil.parseVenueName(argMultimap.getValue(PREFIX_VENUE).get());
         Capacity capacity = ParserUtil.parseCapacity(argMultimap.getValue(PREFIX_CAPACITY).get());
-
         Venue venue = new Venue(name, capacity, description);
 
         return new CreateVenueCommand(venue);

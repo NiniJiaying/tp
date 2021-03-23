@@ -19,6 +19,9 @@ import seedu.booking.logic.commands.EditCommand;
 import seedu.booking.logic.commands.EditPersonCommand;
 import seedu.booking.logic.commands.EditVenueCommand;
 import seedu.booking.logic.commands.ExitCommand;
+import seedu.booking.logic.commands.FilterBookingByBookerCommand;
+import seedu.booking.logic.commands.FilterBookingByDateCommand;
+import seedu.booking.logic.commands.FilterBookingByVenueCommand;
 import seedu.booking.logic.commands.FindBookingCommand;
 import seedu.booking.logic.commands.FindCommand;
 import seedu.booking.logic.commands.FindVenueCommand;
@@ -112,6 +115,15 @@ public class BookingSystemParser {
 
         case ListBookingCommand.COMMAND_WORD:
             return new ListBookingCommand();
+
+        case FilterBookingByVenueCommand.COMMAND_WORD:
+            return new FilterBookingByVenueCommandParser().parse(arguments);
+
+        case FilterBookingByBookerCommand.COMMAND_WORD:
+            return new FilterBookingByBookerCommandParser().parse(arguments);
+
+        case FilterBookingByDateCommand.COMMAND_WORD:
+            return new FilterBookingByDateCommandParser().parse(arguments);
         default:
             throw new ParseException(MESSAGE_UNKNOWN_COMMAND);
         }
