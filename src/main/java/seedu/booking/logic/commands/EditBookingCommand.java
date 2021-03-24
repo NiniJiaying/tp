@@ -29,7 +29,7 @@ public class EditBookingCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Edits the details of the booking identified "
             + "by the id used in the displayed booking list. "
             + "Existing values will be overwritten by the input values.\n"
-            + "Parameters: bido/BOOKING_ID "
+            + "Parameters: bid/BOOKING_ID "
             + "[" + PREFIX_BOOKER + "BOOKER EMAIL] "
             + "[" + PREFIX_VENUE + "VENUE NAME] "
             + "[" + PREFIX_DESCRIPTION + "DESCRIPTION] "
