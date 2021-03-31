@@ -35,7 +35,8 @@ public class EditPersonCommandTest {
 
     @Test
     public void execute_allFieldsSpecifiedUnfilteredList_success() {
-        Person editedPerson = new PersonBuilder().withEmail(VALID_EMAIL_AMY_GMAIL).withPhone("33333333").build();
+        Person editedPerson = new PersonBuilder().withEmail(VALID_EMAIL_AMY_GMAIL).withPhone("33333333")
+                .withTags("friend").build();
         EditPersonDescriptor descriptor = new EditPersonCommandDescriptorBuilder(editedPerson).build();
         EditPersonCommand editPersonCommand = new EditPersonCommand(new Email(VALID_EMAIL_AMY_GMAIL), descriptor);
 
