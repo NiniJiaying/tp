@@ -1,18 +1,17 @@
-package seedu.booking.logic.parser.promptparsers;
+package seedu.booking.logic.parser.promptparsers.person;
 
 import java.util.HashSet;
 import java.util.Set;
 
-import seedu.booking.logic.commands.BookingTagPromptCommand;
+import seedu.booking.logic.commands.person.PersonTagPromptCommand;
 import seedu.booking.logic.parser.exceptions.ParseException;
 import seedu.booking.model.Tag;
 
-public class BookingTagPromptParser {
-
+public class PersonTagPromptParser {
     /**
      * Parses user input for booking tags
      */
-    public BookingTagPromptCommand parse(String args) throws ParseException {
+    public PersonTagPromptCommand parse(String args) throws ParseException {
         final Set<Tag> tagSet = new HashSet<>();
 
         String[] tags = args.split(" ");
@@ -23,6 +22,6 @@ public class BookingTagPromptParser {
             tagSet.add(new Tag(tag));
         }
 
-        return new BookingTagPromptCommand(tagSet);
+        return new PersonTagPromptCommand(tagSet);
     }
 }

@@ -6,7 +6,6 @@ import static seedu.booking.commons.core.Messages.MESSAGE_UNKNOWN_COMMAND;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import seedu.booking.logic.commands.AddPersonCommand;
 import seedu.booking.logic.commands.AddVenueCommand;
 import seedu.booking.logic.commands.ClearCommand;
 import seedu.booking.logic.commands.Command;
@@ -35,14 +34,20 @@ import seedu.booking.logic.commands.ListBookingCommand;
 import seedu.booking.logic.commands.ListPersonCommand;
 import seedu.booking.logic.commands.ListVenueCommand;
 import seedu.booking.logic.commands.PromptCreateBookingCommand;
+import seedu.booking.logic.commands.PromptCreatePersonCommand;
 import seedu.booking.logic.commands.states.BookingCommandState;
+import seedu.booking.logic.commands.states.PersonCommandState;
 import seedu.booking.logic.parser.exceptions.ParseException;
-import seedu.booking.logic.parser.promptparsers.BookingDescPromptParser;
-import seedu.booking.logic.parser.promptparsers.BookingEndPromptParser;
-import seedu.booking.logic.parser.promptparsers.BookingStartPromptParser;
-import seedu.booking.logic.parser.promptparsers.BookingTagPromptParser;
-import seedu.booking.logic.parser.promptparsers.EmailPromptParser;
-import seedu.booking.logic.parser.promptparsers.VenueNamePromptParser;
+import seedu.booking.logic.parser.promptparsers.booking.BookingDescPromptParser;
+import seedu.booking.logic.parser.promptparsers.booking.BookingEndPromptParser;
+import seedu.booking.logic.parser.promptparsers.booking.BookingStartPromptParser;
+import seedu.booking.logic.parser.promptparsers.booking.BookingTagPromptParser;
+import seedu.booking.logic.parser.promptparsers.booking.EmailPromptParser;
+import seedu.booking.logic.parser.promptparsers.booking.VenueNamePromptParser;
+import seedu.booking.logic.parser.promptparsers.person.PersonEmailPromptParser;
+import seedu.booking.logic.parser.promptparsers.person.PersonNamePromptParser;
+import seedu.booking.logic.parser.promptparsers.person.PersonPhonePromptParser;
+import seedu.booking.logic.parser.promptparsers.person.PersonTagPromptParser;
 import seedu.booking.model.ModelManager;
 
 /**
@@ -91,6 +96,18 @@ public class BookingSystemParser {
                 case BookingCommandState.STATE_END:
                     return new BookingEndPromptParser().parse(userInput);
 
+                case PersonCommandState.STATE_EMAIL:
+                    return new PersonEmailPromptParser().parse(userInput);
+
+                case PersonCommandState.STATE_NAME:
+                    return new PersonNamePromptParser().parse(userInput);
+
+                case PersonCommandState.STATE_PHONE:
+                    return new PersonPhonePromptParser().parse(userInput);
+
+                case PersonCommandState.STATE_TAG:
+                    return new PersonTagPromptParser().parse(userInput);
+
                 default:
                     throw new ParseException(MESSAGE_UNKNOWN_COMMAND);
                 }
@@ -107,8 +124,6 @@ public class BookingSystemParser {
         switch (commandWord) {
 
 
-        case AddPersonCommand.COMMAND_WORD:
-            return new AddCommandParser().parse(arguments);
 
         case EditCommand.COMMAND_WORD:
             return new EditCommandParser().parse(arguments);
@@ -187,6 +202,9 @@ public class BookingSystemParser {
 
         case PromptCreateBookingCommand.COMMAND_WORD:
             return new PromptCreateBookingCommand();
+
+        case PromptCreatePersonCommand.COMMAND_WORD:
+            return new PromptCreatePersonCommand();
 
         default:
             throw new ParseException(MESSAGE_UNKNOWN_COMMAND);

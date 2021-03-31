@@ -1,6 +1,6 @@
-package seedu.booking.logic.parser.promptparsers;
+package seedu.booking.logic.parser.promptparsers.booking;
 
-import seedu.booking.logic.commands.BookingDescPromptCommand;
+import seedu.booking.logic.commands.booking.BookingDescPromptCommand;
 import seedu.booking.logic.parser.Parser;
 import seedu.booking.logic.parser.exceptions.ParseException;
 import seedu.booking.model.booking.Description;

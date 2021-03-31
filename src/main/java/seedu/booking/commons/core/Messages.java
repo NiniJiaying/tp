@@ -17,6 +17,12 @@ public class Messages {
     public static final String MESSAGE_INVALID_PERSON_DISPLAYED_INDEX = "The person index provided is invalid";
     public static final String MESSAGE_INVALID_PERSON_DISPLAYED_EMAIL = "Email address "
             + "provided does not exist in the system.\n";
+    public static final String MESSAGE_DUPLICATE_PERSON_DISPLAYED_EMAIL = "This email address has been "
+            + "registered in system. Please change an email address\n";
+    public static final String MESSAGE_DUPLICATE_PERSON_DISPLAYED_PHONE = "This number has been registered in system. "
+            + "Please change an email address\n";
+    public static final String MESSAGE_DUPLICATE_PERSON_DISPLAYED_NAME = "This name has been registered in system. "
+            + "Please change an email address\n";
     public static final String MESSAGE_INVALID_VENUE_NAME = "The venue name provided is invalid\n";
     public static final String MESSAGE_VENUE_DISPLAYED = "%1$d Venue(s) displayed!";
     public static final String MESSAGE_INVALID_BOOKING_ID = "The booking id provided does not exist";
@@ -27,7 +33,9 @@ public class Messages {
             + "should be yyyy-mm-dd HH:mm:ss\n";
 
     public static final String MESSAGE_INVALID_EMAIL_FORMAT = "Invalid email address format, please try again.\n";
-    public static final String MESSAGE_PROMPT_TRYAGAIN = "Please try again or enter exit_prompt to quit prompting.\n";
+    public static final String MESSAGE_INVALID_NAME_FORMAT = "Invalid name format, please try again.\n";
+    public static final String MESSAGE_INVALID_PHONE_FORMAT = "Invalid phone format, please try again.\n";
+    public static final String MESSAGE_PROMPT_TRY_AGAIN = "Please try again or enter exit_prompt to quit prompting.\n";
 
     public static final String PROMPT_EMAIL_MESSAGE = "What is your email address? (Please make ensure this"
         + " email address has been registered in the system)\n";
@@ -39,4 +47,7 @@ public class Messages {
             + "Please enter in yyyy-mm-dd HH:MM format\n";
     public static final String PROMPT_END_MESSAGE = "When does the booking end? "
             + "Please enter in yyyy-mm-dd HH:MM format\n";
+    public static final String PROMPT_PHONE_MESSAGE = "What is your phone number?\n";
+    public static final String PROMPT_EMAIL_PERSON_MESSAGE = "What is your email address?\n";
+    public static final String PROMPT_NAME_MESSAGE = "What is your name?\n";
 }

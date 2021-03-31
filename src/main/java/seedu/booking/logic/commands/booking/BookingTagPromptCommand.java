@@ -1,25 +1,29 @@
-package seedu.booking.logic.commands;
+package seedu.booking.logic.commands.booking;
 
 import static java.util.Objects.requireNonNull;
 
+import java.util.Set;
+
+import seedu.booking.logic.commands.Command;
+import seedu.booking.logic.commands.CommandResult;
 import seedu.booking.logic.commands.exceptions.CommandException;
 import seedu.booking.model.Model;
 import seedu.booking.model.ModelManager;
-import seedu.booking.model.booking.Description;
+import seedu.booking.model.Tag;
 
-public class BookingDescPromptCommand extends Command {
+public class BookingTagPromptCommand extends Command {
 
-    private final Description description;
+    private final Set<Tag> tagSet;
 
-    public BookingDescPromptCommand(Description description) {
-        this.description = description;
+    public BookingTagPromptCommand(Set<Tag> tagSet) {
+        this.tagSet = tagSet;
     }
 
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
 
-        ModelManager.processStateInput(description);
+        ModelManager.processStateInput(tagSet);
         ModelManager.setNextState();
         return new CommandResult(ModelManager.getNextPromptMessage());
     }

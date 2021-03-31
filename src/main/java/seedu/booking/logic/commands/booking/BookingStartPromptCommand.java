@@ -1,7 +1,9 @@
-package seedu.booking.logic.commands;
+package seedu.booking.logic.commands.booking;
 
 import static java.util.Objects.requireNonNull;
 
+import seedu.booking.logic.commands.Command;
+import seedu.booking.logic.commands.CommandResult;
 import seedu.booking.logic.commands.exceptions.CommandException;
 import seedu.booking.model.Model;
 import seedu.booking.model.ModelManager;
