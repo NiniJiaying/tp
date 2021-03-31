@@ -1,37 +1,37 @@
 package seedu.booking.logic.parser;
 
 import static seedu.booking.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-import static seedu.booking.logic.parser.CliSyntax.PREFIX_VENUE;
+import static seedu.booking.logic.parser.CliSyntax.PREFIX_TAG;
 
 import java.util.stream.Stream;
 
-import seedu.booking.logic.commands.FilterBookingByVenueCommand;
+import seedu.booking.logic.commands.FindPersonByTagCommand;
 import seedu.booking.logic.parser.exceptions.ParseException;
-import seedu.booking.model.booking.BookingContainsVenuePredicate;
+import seedu.booking.model.booking.PersonContainsTagPredicate;
 
 /**
- * Parses input arguments and creates a new FilterBookingByVenueCommand object.
+ * Parses input arguments and creates a new FindPersonByTagCommand object.
  */
-public class FilterBookingByVenueCommandParser implements Parser<FilterBookingByVenueCommand> {
+public class FindPersonByTagCommandParser implements Parser<FindPersonByTagCommand> {
 
     /**
      * Parses the given {@code String} of arguments in the context of the FilterBookingByVenueCommandParser
      * and returns a FilterBookingByVenueCommandParser object for execution.
      * @throws ParseException if the user input does not conform to the expected format.
      */
-    public FilterBookingByVenueCommand parse(String args) throws ParseException {
+    public FindPersonByTagCommand parse(String args) throws ParseException {
         ArgumentMultimap argMultimap =
-                ArgumentTokenizer.tokenize(args, PREFIX_VENUE);
-        if (!arePrefixesPresent(argMultimap, PREFIX_VENUE)
-                || argMultimap.getValue(PREFIX_VENUE).isEmpty()) {
+                ArgumentTokenizer.tokenize(args, PREFIX_TAG);
+        if (!arePrefixesPresent(argMultimap, PREFIX_TAG)
+                || argMultimap.getValue(PREFIX_TAG).isEmpty()) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
-                    FilterBookingByVenueCommand.MESSAGE_USAGE));
+                    FindPersonByTagCommand.MESSAGE_USAGE));
         }
 
-        String venueName = argMultimap.getValue(PREFIX_VENUE).get();
-        assert venueName == "" : "venueName should not be empty";
+        String tagName = argMultimap.getValue(PREFIX_TAG).get();
+        assert !tagName.isEmpty() : "tagName should not be empty";
 
-        return new FilterBookingByVenueCommand(new BookingContainsVenuePredicate(venueName));
+        return new FindPersonByTagCommand(new PersonContainsTagPredicate(tagName));
     }
 
     /**
