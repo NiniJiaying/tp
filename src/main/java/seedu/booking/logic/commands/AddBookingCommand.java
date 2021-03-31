@@ -31,8 +31,8 @@ public class AddBookingCommand extends Command {
             + PREFIX_BOOKER + "example@gmail.com "
             + PREFIX_VENUE + "Hall "
             + PREFIX_DESCRIPTION + "For FYP Meeting. "
-            + PREFIX_BOOKING_START + "2012-01-31 22:59:59 "
-            + PREFIX_BOOKING_END + "2012-01-31 23:59:59"
+            + PREFIX_BOOKING_START + "2012-01-31 22:00 "
+            + PREFIX_BOOKING_END + "2012-01-31 23:00"
             + PREFIX_TAG + "StudentAffairs";
 
     public static final String MESSAGE_SUCCESS = "New booking added: %1$s";

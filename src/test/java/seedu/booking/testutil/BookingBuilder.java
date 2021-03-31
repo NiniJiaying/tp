@@ -36,7 +36,7 @@ public class BookingBuilder {
     private EndTime bookingEnd;
     private Set<Tag> tags;
     private Id id;
-    private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 
     /**
      * Creates a {@code BookingBuilder} with the default details.

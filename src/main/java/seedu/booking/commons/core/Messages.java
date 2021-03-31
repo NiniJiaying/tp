@@ -36,7 +36,7 @@ public class Messages {
     public static final String PROMPT_TAG_MESSAGE = "Please give booking tags. "
         + "Multiple tags to be separated with spaces.\n";
     public static final String PROMPT_START_MESSAGE = "When does the booking start? "
-            + "Please enter in yyyy-mm-dd HH:MM:ss format\n";
+            + "Please enter in yyyy-mm-dd HH:MM format\n";
     public static final String PROMPT_END_MESSAGE = "When does the booking end? "
-            + "Please enter in yyyy-mm-dd HH:MM:ss format\n";
+            + "Please enter in yyyy-mm-dd HH:MM format\n";
 }
