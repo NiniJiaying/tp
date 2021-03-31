@@ -9,14 +9,14 @@ public class Id {
 
     public static final String MESSAGE_CONSTRAINTS =
             "Id should only contain numbers, and it should be 10 digits long";
-    public final Integer value;
+    public final String value;
 
     /**
      * Constructs a {@code Id}.
      *
      * @param id A valid id.
      */
-    public Id(Integer id) {
+    public Id(String id) {
         requireNonNull(id);
         value = id;
     }
